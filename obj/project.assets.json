@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Car-House\\Car-House.csproj",
+      "projectUniqueName": "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Car-House.csproj",
       "projectName": "Car-House",
-      "projectPath": "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Car-House\\Car-House.csproj",
+      "projectPath": "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Car-House.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Car-House\\obj\\",
+      "outputPath": "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
