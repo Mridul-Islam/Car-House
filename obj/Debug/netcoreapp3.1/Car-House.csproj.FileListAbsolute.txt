@@ -170,3 +170,4 @@ E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\bin\Debug\netcoreapp3.
 E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\obj\Debug\netcoreapp3.1\Razor\Views\Car\Create.cshtml.g.cs

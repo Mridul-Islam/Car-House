@@ -14435,6 +14435,11 @@
       "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Car\\Create.cshtml",
+      "TargetPath": "Views\\Car\\Create.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"
