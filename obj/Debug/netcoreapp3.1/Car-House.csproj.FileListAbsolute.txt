@@ -173,3 +173,4 @@ E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\bin\Debug\netcoreapp3.
 E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\obj\Debug\netcoreapp3.1\Razor\Views\Car\Create.cshtml.g.cs
 E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Admin_Layout.cshtml.g.cs
 E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Profile.cshtml.g.cs
+E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\obj\Debug\netcoreapp3.1\Razor\Views\Car\Index.cshtml.g.cs

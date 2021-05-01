@@ -1,0 +1,9 @@
+@model IEnumerable<Car>
+
+@{
+    ViewBag.Title = "Car home";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<a asp-action="Create" asp-controller="Car">Add New Car</a>
+<h3>Add Existing Car</h3>

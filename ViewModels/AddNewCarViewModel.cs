@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using Car_House.Models;
 using System.Collections.Generic;
+// for  IFormFile
+using Microsoft.AspNetCore.Http;
 
 
 namespace Car_House.ViewModels
@@ -28,7 +30,6 @@ namespace Car_House.ViewModels
         public decimal Mileage {get; set; }
         public Category Category {get; set; }
         public SteeringType SteeringType {get; set; }
-        public ICollection<Image> Images {get; set; }
-        public string DisplayImage {get; set; }
+        public List<IFormFile> Images {get; set; }
     }
 }
