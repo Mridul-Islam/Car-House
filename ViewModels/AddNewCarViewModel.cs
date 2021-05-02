@@ -9,7 +9,6 @@ namespace Car_House.ViewModels
 {
     public class AddNewCarViewModel
     {
-        public int CarID {get; set; }
         [Display(Name="Car Description")]
         public string CarDescription {get; set; }
         public string Model {get; set; }

@@ -84,7 +84,8 @@ namespace Car_House.Models
         public decimal Mileage {get; set; }
         public Category Category {get; set; }
         public SteeringType SteeringType {get; set; }
-        public ICollection<Image> Images {get; set; }
+        //public ICollection<Image> Images {get; set; }
+        public string Images {get; set; }
         public string DisplayImage {get; set; }
     }
 }

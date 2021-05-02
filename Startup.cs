@@ -32,6 +32,8 @@ namespace Car_House
 
             services.AddDbContext<CarDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("CarDbContext")));
+
+            services.AddScoped<ICarRepository, CCarRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

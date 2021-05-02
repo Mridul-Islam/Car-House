@@ -11,9 +11,6 @@ namespace Car_House.Models
         }
 
         public DbSet<Car> CarList { get; set; }
-        public DbSet<Brand> BrandList { get; set; }
-        public DbSet<User> UserList { get; set; }
-        public DbSet<Image> ImageList { get; set; }
     }
 }
 
