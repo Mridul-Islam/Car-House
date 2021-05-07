@@ -4,34 +4,34 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
 using Car_House.Models;
-
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Car_House
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration config)
         {
-            Configuration = configuration;
+            _config = config;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration _config { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContextPool<CarDbContext>(options => 
+                options.UseSqlite(_config.GetConnectionString("CarDbConnection")));
+
             services.AddControllersWithViews();
 
-            services.AddDbContext<CarDbContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("CarDbContext")));
+            services.AddMvc().AddXmlSerializerFormatters();
 
             services.AddScoped<ICarRepository, CCarRepository>();
         }

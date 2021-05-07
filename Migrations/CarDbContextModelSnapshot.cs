@@ -28,15 +28,18 @@ namespace Car_House.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("BrandName")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CarDescription")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Category")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Color")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Condition")
@@ -61,6 +64,7 @@ namespace Car_House.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Model")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("NoOfSeats")
@@ -78,6 +82,48 @@ namespace Car_House.Migrations
                     b.HasKey("CarID");
 
                     b.ToTable("CarList");
+
+                    b.HasData(
+                        new
+                        {
+                            CarID = 1,
+                            BodyType = "d",
+                            BrandID = 0,
+                            BrandName = "Audi",
+                            CarDescription = "this is Audi",
+                            Category = 0,
+                            Color = "black",
+                            Condition = 0,
+                            EngineType = 1,
+                            FuelType = 1,
+                            GearType = 0,
+                            Mileage = 50m,
+                            Model = "Audi a1 ambition",
+                            NoOfSeats = 5,
+                            Price = 5000000m,
+                            SteeringType = 0,
+                            Transmission = 0
+                        },
+                        new
+                        {
+                            CarID = 2,
+                            BodyType = "d",
+                            BrandID = 0,
+                            BrandName = "BMW",
+                            CarDescription = "this is BMW",
+                            Category = 2,
+                            Color = "silver",
+                            Condition = 0,
+                            EngineType = 1,
+                            FuelType = 1,
+                            GearType = 0,
+                            Mileage = 50m,
+                            Model = "BMW-1",
+                            NoOfSeats = 5,
+                            Price = 7000000m,
+                            SteeringType = 0,
+                            Transmission = 0
+                        });
                 });
 #pragma warning restore 612, 618
         }

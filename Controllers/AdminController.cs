@@ -1,5 +1,5 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Car_House.Models;
 
 
 namespace Car_House.Controllers
@@ -9,5 +9,9 @@ namespace Car_House.Controllers
         public IActionResult Profile(){
             return View();
         }
+
+
+
+
     }
 }

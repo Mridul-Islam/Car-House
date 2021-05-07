@@ -1,89 +1,155 @@
-using System;
 using Microsoft.AspNetCore.Mvc;
-using Car_House.ViewModels;
 using Car_House.Models;
-// for  IFormFile
-using Microsoft.AspNetCore.Http;
-//for using the path class
-using System.IO;
-//for use IWebHostEnvironmetn
+using Car_House.ViewModels;
 using Microsoft.AspNetCore.Hosting;
-
+using System.IO;
+using System;
+using Microsoft.AspNetCore.Http;
 
 
 namespace Car_House.Controllers
 {
     public class CarController: Controller
     {
-
-        
-        private readonly ICarRepository _CarRepository;
+        private readonly ICarRepository _carRepository;
         private readonly IWebHostEnvironment _hostingEnvironment;
-        public CarController(IWebHostEnvironment hostingEnvironment,
-                                ICarRepository CarRepository)
+        public CarController(ICarRepository carRepository,
+                            IWebHostEnvironment hostingEnvironment)
         {
-            _CarRepository = CarRepository;
-            this._hostingEnvironment = hostingEnvironment;
+            _carRepository = carRepository;
+            _hostingEnvironment = hostingEnvironment;
         }
 
-
-        public IActionResult Index(){
-            return View();
+        public ViewResult Index(){
+            var model =  _carRepository.GetAllCar();
+            return View(model);
         }
 
-        [HttpGet]
-        public IActionResult Create(){
-            return View();
-        }
-
-        private string ProcessUploadedFile(AddNewCarViewModel newmodel){
+        public string ProcessUploadedFile(CarCreateViewModel carModel){
             string uniqueFileName = null;
-                if(newmodel.Images != null && newmodel.Images.Count > 0){
-                    foreach(IFormFile image in newmodel.Images){
+                if(carModel.Images!=null && carModel.Images.Count > 0){
+                    foreach(IFormFile image in carModel.Images){
+                        // WebRoot will help to reach to wwwroot folder
                         string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
-                        //for ensure unoque name in photo field.. we will use Guid (global unique identifier)
-                        //uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Photos.FileName;
+                        //for uniquely recognize use the guid class
                         uniqueFileName = Guid.NewGuid().ToString() + "_" + image.FileName;
-                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                        //model.Photos.CopyTo(new FileStream(filePath, FileMode.Create));
-                        using (var fileStream = new FileStream(filePath, FileMode.Create))
-                        {
+                        string filepath = Path.Combine(uploadsFolder, uniqueFileName);
+                        using (var fileStream = new FileStream(filepath, FileMode.Create)){
                             image.CopyTo(fileStream);
                         }
-                        // at that point we have the uploaded photo in images folder.....
+                        
                     }
                 }
                 return uniqueFileName;
         }
 
+        [HttpGet]
+        public ViewResult Create(){
+            return View();
+        }
+
         [HttpPost]
-        public IActionResult Create(AddNewCarViewModel newmodel){
+        public IActionResult Create(CarCreateViewModel carModel){
             if(ModelState.IsValid){
-                string uniqueFileName = ProcessUploadedFile(newmodel);
+                string uniqueFileName = ProcessUploadedFile(carModel);
                 Car newCar = new Car{
-                    CarDescription = newmodel.CarDescription,
-                    Model = newmodel.Model,
-                    BrandID = newmodel.BrandID,
-                    BrandName = newmodel.BrandName,
-                    Color = newmodel.Color,
-                    Transmission = newmodel.Transmission,
-                    Condition = newmodel.Condition,
-                    FuelType = newmodel.FuelType,
-                    GearType = newmodel.GearType,
-                    BodyType = newmodel.BodyType,
-                    EngineType = newmodel.EngineType,
-                    NoOfSeats = newmodel.NoOfSeats,
-                    Price = newmodel.Price,
-                    Mileage = newmodel.Mileage,
-                    Category = newmodel.Category,
-                    SteeringType = newmodel.SteeringType,
+                    CarDescription = carModel.CarDescription,
+                    Model = carModel.Model,
+                    BrandName = carModel.BrandName,
+                    Color = carModel.Color,
+                    Transmission = carModel.Transmission,
+                    Condition = carModel.Condition,
+                    FuelType = carModel.FuelType,
+                    GearType = carModel.GearType,
+                    BodyType = carModel.BodyType,
+                    EngineType = carModel.EngineType,
+                    NoOfSeats = carModel.NoOfSeats,
+                    Price = carModel.Price,
+                    Mileage = carModel.Mileage,
+                    Category = carModel.Category,
+                    SteeringType = carModel.SteeringType,
                     Images = uniqueFileName
                 };
-                _CarRepository.Add(newCar);
-                //return RedirectToAction("index", "Car");
+                _carRepository.Add(newCar);
+
+                return RedirectToAction("index");
             }
             return View();
         }
+
+        public ViewResult Details(int id){
+            CarDetailsViewModel carDetailsViewModel = new CarDetailsViewModel()
+            {
+                Car = _carRepository.GetCar(id),
+                PageTitle = "Car Details"
+            };
+            return View(carDetailsViewModel);
+        }
+
+        [HttpGet]
+        public ViewResult Edit(int id){
+            Car car = _carRepository.GetCar(id);
+            //first retrieve the existing information for showing
+            CarEditViewModel carEditViewModel = new CarEditViewModel
+            {
+                Id = car.CarID,
+                CarDescription = car.CarDescription,
+                Model = car.Model,
+                BrandName = car.BrandName,
+                Color = car.Color,
+                Transmission = car.Transmission,
+                Condition = car.Condition,
+                FuelType = car.FuelType,
+                GearType = car.GearType,
+                BodyType = car.BodyType,
+                EngineType = car.EngineType,
+                NoOfSeats = car.NoOfSeats,
+                Price = car.Price,
+                Mileage = car.Mileage,
+                Category = car.Category,
+                SteeringType = car.SteeringType,
+                ExistingImage = car.Images 
+            };
+            return View(carEditViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(CarEditViewModel carModel){
+            if(ModelState.IsValid){
+                Car car = _carRepository.GetCar(carModel.Id);
+                
+                car.CarDescription = carModel.CarDescription;
+                car.Model = carModel.Model;
+                car.BrandName = carModel.BrandName;
+                car.Color = carModel.Color;
+                car.Transmission = carModel.Transmission;
+                car.Condition = carModel.Condition;
+                car.FuelType = carModel.FuelType;
+                car.GearType = carModel.GearType;
+                car.BodyType = carModel.BodyType;
+                car.EngineType = carModel.EngineType;
+                car.NoOfSeats = carModel.NoOfSeats;
+                car.Price = carModel.Price;
+                car.Mileage = carModel.Mileage;
+                car.Category = carModel.Category;
+                car.SteeringType = carModel.SteeringType;
+                if(carModel.Images != null){
+                    if(carModel.ExistingImage != null){
+                        string filePath = Path.Combine(_hostingEnvironment.WebRootPath,"images",
+                            carModel.ExistingImage);
+                        System.IO.File.Delete(filePath);
+                    }
+                    car.Images = ProcessUploadedFile(carModel);
+                }
+
+                _carRepository.Update(car);
+
+                return RedirectToAction("index");
+            }
+            return View();
+        }
+
+
 
 
     }

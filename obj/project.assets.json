@@ -8849,11 +8849,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Car-House.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Car-House\\Car-House.csproj",
       "projectName": "Car-House",
-      "projectPath": "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Car-House.csproj",
+      "projectPath": "C:\\Users\\DELL\\Desktop\\Car-House\\Car-House.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\obj\\",
+      "outputPath": "C:\\Users\\DELL\\Desktop\\Car-House\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"

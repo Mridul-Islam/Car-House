@@ -1,4 +1,57 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<Car>
+
+@{
+    ViewBag.Title = "Car home";
 }
 
+<h1 class=" text-center">Cars</h1>
+<div class="cartable">
+    <table class="table table-hover table-striped table-dark">
+        <thead>
+            <tr>
+                <th>
+                    Category
+                </th>
+                <th>
+                    Brand
+                </th>
+                <th>
+                    Model
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Photo
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model)
+            {
+                //var del = "#deletemodal" + item.CarID;
+                <tr>
+                    <td>
+                        @car.Category
+                    </td>
+                    <td>
+                        @car.BrandName
+                    </td>
+                    <td>
+                        @car.Model
+                    </td>
+                    <td>
+                        @car.Price
+                    </td>
+                    <td>
+                        <img style="width:100px; height:60px;" src="~/images/gdCar.jpg" alt="No Image" asp-append-version="true" />
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@car.CarID">View</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

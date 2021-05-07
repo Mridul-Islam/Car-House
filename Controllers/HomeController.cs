@@ -6,21 +6,34 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Car_House.Models;
+using Car_House.ViewModels;
 
 namespace Car_House.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ICarRepository _carRepository;
+        public HomeController(ILogger<HomeController> logger,
+                                ICarRepository carRepository)
         {
             _logger = logger;
+            _carRepository = carRepository;
         }
 
-        public IActionResult Index()
+        public ViewResult Index()
         {
-            return View();
+            var model = _carRepository.GetAllCar();
+            return View(model);
+        }
+
+        public ViewResult Details(int id){
+            CarDetailsViewModel carDetailsViewModel = new CarDetailsViewModel()
+            {
+                Car = _carRepository.GetCar(id),
+                PageTitle = "Car Details"
+            };
+            return View(carDetailsViewModel);
         }
 
         public IActionResult Privacy()

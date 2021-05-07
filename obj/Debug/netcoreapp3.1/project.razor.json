@@ -1,5 +1,5 @@
 {
-  "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Car-House.csproj",
+  "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Car-House.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14402,57 +14402,72 @@
   "RootNamespace": "Car_House",
   "Documents": [
     {
-      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Car\\Index.cshtml",
-      "TargetPath": "Views\\Car\\Index.cshtml",
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\Car\\Edit.cshtml",
+      "TargetPath": "Views\\Car\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\Home\\Details.cshtml",
+      "TargetPath": "Views\\Home\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Admin\\Profile.cshtml",
-      "TargetPath": "Views\\Admin\\Profile.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\Car\\Details.cshtml",
+      "TargetPath": "Views\\Car\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Shared\\Admin_Layout.cshtml",
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\Shared\\Admin_Layout.cshtml",
       "TargetPath": "Views\\Shared\\Admin_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Car\\Create.cshtml",
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\Car\\Index.cshtml",
+      "TargetPath": "Views\\Car\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\Admin\\Profile.cshtml",
+      "TargetPath": "Views\\Admin\\Profile.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\DELL\\Desktop\\Car-House\\Views\\Car\\Create.cshtml",
       "TargetPath": "Views\\Car\\Create.cshtml",
       "FileKind": "mvc"
     }

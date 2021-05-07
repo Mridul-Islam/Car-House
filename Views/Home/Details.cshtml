@@ -1,0 +1,44 @@
+@model CarDetailsViewModel
+
+@{
+    ViewBag.Title = "Car Details";
+}
+
+
+<h3 style="text-align: center;">@Model.PageTitle</h3>
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.Car.CarDescription</h1>
+            </div>
+            <div class="card-body text-center">
+                <img class="card-img-top" src="~/images/gdCar.jpg" asp-append-version="true" />
+
+                <h4>Model: @Model.Car.Model</h4>
+                <h4>Brand Name: @Model.Car.BrandName</h4>
+                <h4>Color: @Model.Car.Color</h4>
+                <h4>Transmission: @Model.Car.Transmission</h4>
+                <h4>Condition: @Model.Car.Condition</h4>
+                <h4>FuelType: @Model.Car.FuelType</h4>
+                <h4>BodyType: @Model.Car.BodyType</h4>
+                <h4>GearType: @Model.Car.GearType</h4>
+                <h4>EngineType: @Model.Car.EngineType</h4>
+                <h4>No Of Seats: @Model.Car.NoOfSeats</h4>
+                <h4>Price: @Model.Car.Price</h4>
+                <h4>Mileage: @Model.Car.Mileage</h4>
+                <h4>Category: @Model.Car.Category</h4>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-controller="home" asp-action="index" class="btn btn-primary">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script src="~/js/CustomScript.js"></script>
+}

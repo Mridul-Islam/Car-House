@@ -64,28 +64,59 @@ namespace Car_House.Models
     public class Car
     {
         public int CarID {get; set; }
+
+        [Required]
         [Display(Name="Car Description")]
         public string CarDescription {get; set; }
+
+        [Required]
         public string Model {get; set; }
         [Display(Name="Brand ID")]
+
         public int BrandID {get; set; }
+
+        [Required]
         [Display(Name="Brand Name")]
         public string BrandName {get; set; }
+
+        [Required]
         public string Color {get; set; }
-        public Transmission Transmission {get; set; }
-        public Condition Condition {get; set; }
-        public FuelType FuelType {get; set; }
-        public GearType GearType {get; set; }
+
+        [Required]
+        public Transmission? Transmission {get; set; }
+
+        [Required]
+        public Condition? Condition {get; set; }
+        
+        [Required]
+        public FuelType? FuelType {get; set; }
+        
+        [Required]
+        public GearType? GearType {get; set; }
         public string BodyType {get; set; }
-        public EngineType EngineType {get; set; }
+        
+        [Required]
+        public EngineType? EngineType {get; set; }
+
+        [Required]
         [Display(Name="No Of Seats")]
         public int NoOfSeats {get; set; }
+
+        [Required]
         public decimal Price {get; set; }
+
+        [Required]
         public decimal Mileage {get; set; }
-        public Category Category {get; set; }
-        public SteeringType SteeringType {get; set; }
+        
+        [Required]
+        public Category? Category {get; set; }
+        
+        [Required]
+        public SteeringType? SteeringType {get; set; }
+
         //public ICollection<Image> Images {get; set; }
         public string Images {get; set; }
+
         public string DisplayImage {get; set; }
     }
 }
