@@ -30,6 +30,7 @@
         <tbody>
             @foreach (var car in Model)
             {
+                var image = "~/images/" + (car.Images?? "gdCar.jpg");
                 //var del = "#deletemodal" + item.CarID;
                 <tr>
                     <td>
@@ -45,7 +46,7 @@
                         @car.Price
                     </td>
                     <td>
-                        <img style="width:100px; height:60px;" src="~/images/gdCar.jpg" alt="No Image" asp-append-version="true" />
+                        <img style="width:100px; height:60px;" src="@image" alt="No Image" asp-append-version="true" />
                     </td>
                     <td>
                         <a asp-action="Details" asp-route-id="@car.CarID">View</a>

@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 
 namespace Car_House.Models
 {
-    public class CarDbContext: DbContext
+    public class CarDbContext: IdentityDbContext
     {
         public CarDbContext(DbContextOptions<CarDbContext> options)
             :base(options)
@@ -16,6 +17,7 @@ namespace Car_House.Models
         // for seed data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Seed();
         }
 

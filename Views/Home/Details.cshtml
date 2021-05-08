@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Car Details";
+    var image = "~/images/" + (Model.Car.Images ?? "gdCar.jpg");
 }
 
 
@@ -14,7 +15,7 @@
                 <h1>@Model.Car.CarDescription</h1>
             </div>
             <div class="card-body text-center">
-                <img class="card-img-top" src="~/images/gdCar.jpg" asp-append-version="true" />
+                <img class="card-img-top" src="@image" asp-append-version="true" />
 
                 <h4>Model: @Model.Car.Model</h4>
                 <h4>Brand Name: @Model.Car.BrandName</h4>

@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Car_House.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 
 namespace Car_House
@@ -28,6 +29,9 @@ namespace Car_House
         {
             services.AddDbContextPool<CarDbContext>(options => 
                 options.UseSqlite(_config.GetConnectionString("CarDbConnection")));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                    .AddEntityFrameworkStores<CarDbContext>();
 
             services.AddControllersWithViews();
 
@@ -51,6 +55,7 @@ namespace Car_House
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
 
             app.UseRouting();
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DELL\\Desktop\\Car-House\\Car-House.csproj": {}
+    "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Car-House.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DELL\\Desktop\\Car-House\\Car-House.csproj": {
+    "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Car-House.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Car-House\\Car-House.csproj",
+        "projectUniqueName": "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Car-House.csproj",
         "projectName": "Car-House",
-        "projectPath": "C:\\Users\\DELL\\Desktop\\Car-House\\Car-House.csproj",
+        "projectPath": "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Car-House.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\Desktop\\Car-House\\obj\\",
+        "outputPath": "E:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -39,6 +39,10 @@
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.9, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
