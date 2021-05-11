@@ -5,10 +5,12 @@ using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace Car_House.Controllers
 {
+    [Authorize]
     public class CarController: Controller
     {
         private readonly ICarRepository _carRepository;

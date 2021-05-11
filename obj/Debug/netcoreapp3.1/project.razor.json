@@ -14452,6 +14452,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\User\\LogIn.cshtml",
+      "TargetPath": "Views\\User\\LogIn.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"

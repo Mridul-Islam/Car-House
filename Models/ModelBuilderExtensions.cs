@@ -13,7 +13,7 @@ namespace Car_House.Models
                     Condition = Condition.New, FuelType = FuelType.Diesel, GearType=GearType.Automatic,
                     BodyType = "d", EngineType = EngineType.Straight, NoOfSeats = 5,
                     Price = 5000000, Mileage = 50, Category = Category.Sedan,
-                    SteeringType = SteeringType.PowerSteering 
+                    SteeringType = SteeringType.PowerSteering
                 },
                 new Car{
                     CarID = 2, CarDescription="this is BMW", Model="BMW-1",
@@ -21,7 +21,7 @@ namespace Car_House.Models
                     Condition = Condition.New, FuelType = FuelType.Diesel, GearType=GearType.Automatic,
                     BodyType = "d", EngineType = EngineType.Straight, NoOfSeats = 5,
                     Price = 7000000, Mileage = 50, Category = Category.Sport,
-                    SteeringType = SteeringType.PowerSteering 
+                    SteeringType = SteeringType.PowerSteering
                 }
             );
         }

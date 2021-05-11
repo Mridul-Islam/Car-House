@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Car_House.Models
 {
-    public class CarDbContext: IdentityDbContext
+    public class CarDbContext: IdentityDbContext<UpdateUser>
     {
         public CarDbContext(DbContextOptions<CarDbContext> options)
             :base(options)

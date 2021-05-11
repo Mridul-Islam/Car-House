@@ -114,6 +114,7 @@ namespace Car_House.Models
         [Required]
         public SteeringType? SteeringType {get; set; }
 
+        //[Required]
         //public ICollection<Image> Images {get; set; }
         public string Images {get; set; }
 

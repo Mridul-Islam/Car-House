@@ -30,8 +30,11 @@ namespace Car_House
             services.AddDbContextPool<CarDbContext>(options => 
                 options.UseSqlite(_config.GetConnectionString("CarDbConnection")));
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                    .AddEntityFrameworkStores<CarDbContext>();
+            services.AddIdentity<UpdateUser, IdentityRole>(options => {
+                    options.Password.RequiredLength = 7;
+                    options.Password.RequireNonAlphanumeric = false;
+                })
+                .AddEntityFrameworkStores<CarDbContext>();
 
             services.AddControllersWithViews();
 
