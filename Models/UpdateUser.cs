@@ -7,12 +7,14 @@ namespace Car_House.Models
 {
     public class UpdateUser : IdentityUser
     {
-        //[Required]
+        [Required]
         [Display(Name = "First Name")]
         public string FirstName{get; set;}
 
-        //[Required]
+        [Required]
         [Display(Name = "Last Name")]
         public string LastName{get; set;}
+
+        public string ProfilePicture { get; set; } 
     }
 }

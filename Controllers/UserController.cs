@@ -63,7 +63,7 @@ namespace Car_House.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password,
                                                     model.RememberMe, false);
                 if(result.Succeeded){
-                    return RedirectToAction("profile", "Admin");
+                    return RedirectToAction("index", "Car");
                 }
                 ModelState.AddModelError("", "Invalid LogIn Attemp");
             }

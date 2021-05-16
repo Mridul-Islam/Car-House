@@ -359,3 +359,4 @@ E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\bin\Debug\netcoreapp3.
 E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\obj\Debug\netcoreapp3.1\Razor\Views\User\Register.cshtml.g.cs
 E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\obj\Debug\netcoreapp3.1\Razor\Views\User\LogIn.cshtml.g.cs
+E:\UNIVERSITY WORK\last semester\InternShip\Git\Car-House\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UpdateProfile.cshtml.g.cs

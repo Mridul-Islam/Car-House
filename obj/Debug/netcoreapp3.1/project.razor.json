@@ -14447,6 +14447,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Admin\\UpdateProfile.cshtml",
+      "TargetPath": "Views\\Admin\\UpdateProfile.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"

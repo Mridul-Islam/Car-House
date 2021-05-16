@@ -1,6 +1,40 @@
+@model ProfileViewModel
+
 @{
-    ViewBag.Title = "Add Car";
+    ViewBag.Title = "Admin Profile";
     Layout = "~/Views/Shared/Admin_Layout.cshtml";
 }
 
-<h1>Hi. this is Mridul Islam</h1>
+
+
+
+<div class="row px-3">
+    <h1>Profile</h1>
+</div>
+
+
+<div class="profile">
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2 mt-2">
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd class="col-sm-10 mt-2">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class="col-sm-2 mt-2">
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>
+        <dd class="col-sm-10 mt-2">
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+    </dl>
+
+    <div class="card m-auto col-md-6 col-lg-4 col-sm-12 mt-2">
+        <div class="card-body">
+            <img src="@Model.Images" class="" style="width:100%;" alt="No Image" />
+        </div>
+    </div>
+
+</div>

@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+<body style="background-color: #34495e;">
     <header> 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div style="background-color: #54a0ff; height:auto"  class="container">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="font-size:20px;">
+            <div style="background-color: #7f8c8d; height:auto"  class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Car_House</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -29,12 +29,27 @@
                     </ul>
                     <ul class="navbar-nav">
                         @if(signInManager.IsSignedIn(User)){ 
-                            <li class="nav-item">
+                            @* <li class="nav-item">
                                 <form method="post" asp-action="logout" asp-controller="User">
                                     <button type="submit" class="nav-link btn btn-link py-0" style="width: auto;">
                                         @User.Identity.Name
                                     </button>
                                 </form>
+                            </li> *@
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    @User.Identity.Name
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-controller="Car" asp-action="index"><u>Account</u></a>
+                                    @* <a class="dropdown-item" asp-controller="" asp-action=""><u>Logout</u></a> *@
+                                    <form method="post" asp-action="logout" asp-controller="User">
+                                        <button type="submit" class="nav-link btn btn-link py-0" style="width: auto;color:black;">
+                                            <a class="dropdown-item"><u>Logout</u></a>
+                                        </button>
+                                    </form>
+                                </div>
                             </li>
                         }
                         else{
