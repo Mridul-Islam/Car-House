@@ -1,0 +1,11 @@
+@model IEnumerable<Car>
+
+@{
+    ViewBag.Title = "Admin Car home";
+    Layout = "~/Views/Shared/LogIn_Layout.cshtml";
+}
+
+<a asp-action="login" asp-controller="Admin" type="button" class="btn btn-primary">LogIn</a>
+<a asp-action="register" asp-controller="Admin" type="button" class="btn btn-primary">Registration</a>
+
+

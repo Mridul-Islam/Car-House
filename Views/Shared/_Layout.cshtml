@@ -11,7 +11,7 @@
 </head>
 <body style="background-color: #34495e;">
     <header> 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="font-size:20px;">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="font-size:16px;">
             <div style="background-color: #7f8c8d; height:auto"  class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Car_House</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -24,10 +24,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="products">Products</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav">
+                    @* <ul class="navbar-nav">
                         @if(signInManager.IsSignedIn(User)){ 
                             @* <li class="nav-item">
                                 <form method="post" asp-action="logout" asp-controller="User">
@@ -35,7 +35,7 @@
                                         @User.Identity.Name
                                     </button>
                                 </form>
-                            </li> *@
+                            </li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,7 +43,7 @@
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" asp-controller="Car" asp-action="index"><u>Account</u></a>
-                                    @* <a class="dropdown-item" asp-controller="" asp-action=""><u>Logout</u></a> *@
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><u>Logout</u></a>
                                     <form method="post" asp-action="logout" asp-controller="User">
                                         <button type="submit" class="nav-link btn btn-link py-0" style="width: auto;color:black;">
                                             <a class="dropdown-item"><u>Logout</u></a>
@@ -60,7 +60,7 @@
                                 <a class="nav-link text-dark" asp-controller="User" asp-action="login">LogIn</a>
                             </li>
                         }
-                    </ul>
+                    </ul> *@
                 </div>
             </div>
         </nav>

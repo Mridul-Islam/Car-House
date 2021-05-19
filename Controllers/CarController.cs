@@ -6,6 +6,7 @@ using System.IO;
 using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
 
 
 namespace Car_House.Controllers
@@ -149,6 +150,25 @@ namespace Car_House.Controllers
                 return RedirectToAction("index");
             }
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var car = _carRepository.GetCar(id);
+
+            return View(car);
+        }
+
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            
+            //var car = _carRepository.GetCar(id);
+            _carRepository.Delete(id);
+            return RedirectToAction(nameof(Index));
         }
 
 

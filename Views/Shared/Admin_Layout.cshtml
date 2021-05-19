@@ -13,9 +13,9 @@
 <body style="background-color: #34495e;">
     <header>
         @if(signInManager.IsSignedIn(User)){
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="font-size:20px;">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="font-size:16px;">
             <div style="background-color: #95a5a6; height:auto" class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Car_House</a>
+                @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Car_House</a> *@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,8 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-action="Profile" asp-controller="Admin" asp-route-id="@User.Identity.Name">Profile</a>
+                            <a class="nav-link text-dark" asp-action="Profile" asp-controller="Admin" asp-route-name="@User.Identity.Name">Profile</a>
+                            @* <a class="nav-link text-dark" asp-action="Profile" asp-controller="Admin" asp-route-id="@Model.UserID">Profile</a> *@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-action="Index" asp-controller="Car">Cars</a>
@@ -36,11 +37,11 @@
                                 @User.Identity.Name
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-controller="Admin" asp-action="UpdateProfile" asp-route-name="@User.Identity.Name"><u>Update Profile</u></a>
-                                <a class="dropdown-item" asp-controller="" asp-action=""><u>Change Password</u></a>
+                                @* <a class="dropdown-item" asp-controller="Admin" asp-action="UpdateProfile" asp-route-name="@User.Identity.Name"><u>Update Profile</u></a>
+                                <a class="dropdown-item" asp-controller="" asp-action=""><u>Change Password</u></a> *@
                                 @* <a class="dropdown-item" asp-controller="" asp-action=""><u>Logout</u></a> *@
 
-                                <form method="post" asp-action="logout" asp-controller="User">
+                                <form method="post" asp-action="logout" asp-controller="Admin">
                                     <button type="submit" class="nav-link btn btn-link py-0" style="width: auto;color:black;">
                                         <a class="dropdown-item"><u>Logout</u></a>
                                     </button>

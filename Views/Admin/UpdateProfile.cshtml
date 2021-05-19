@@ -1,4 +1,5 @@
 @model ProfileViewModel
+@inject SignInManager<UpdateUser> signInManager;
 
 @{
     ViewBag.Title = "Update Profile";
@@ -10,14 +11,9 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form enctype="multipart/form-data" asp-action="Update">
+        <form enctype="multipart/form-data" asp-action="UpdateProfile" asp-controller="Admin" method="Post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="UserID" />
-            <div class="form-group">
-                <label asp-for="UserID" class="control-label"></label>
-                <input asp-for="UserID" class="form-control" />
-                <span asp-validation-for="UserID" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
@@ -36,11 +32,6 @@
                 </div>              
                 <span asp-validation-for="Images" class="text-danger"></span>
             </div>
-
-            @* <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div> *@
-
             <div class="form-group row" >
                 <div class="col-sm-auto">
                     <button type="submit" class="btn btn-primary" style="width: 80px;margin-top: 10px;">Submit</button>
@@ -48,23 +39,17 @@
                 <div class="col-sm-auto">
                     <a asp-action="Profile" asp-controller="Admin" class="btn btn-primary" style="width: 80px;margin-top: 10px;">Cancel</a>
                 </div>
-                
             </div>
+            @section Scripts{
+                <script>
+                    $(document).ready(function(){
+                        $(".custom-file-input").on("change", function(){
+                            var fileName = $(this).val().split("\\").pop();
+                            $(this).next('.custom-file-label').html(fileName);
+                        });
+                    });
+                </script>
+            }
         </form>
     </div>
 </div>
-
-@* <div>
-    <a asp-action="Profile">Back to Profile</a>
-</div> *@
-
-@section scripts{
-    <script type="text/javascript">
-
-        // Add the following code if you want the name of the file appear on select
-        $(".custom-file-input").on("change", function () {
-            var fileName = $(this).val().split("\\").pop();
-            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-        });
-    </script>
-}

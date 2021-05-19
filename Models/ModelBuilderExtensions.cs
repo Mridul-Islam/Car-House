@@ -24,6 +24,12 @@ namespace Car_House.Models
                     SteeringType = SteeringType.PowerSteering
                 }
             );
+            // modelBuilder.Entity<UpdateUser>().HasData(
+            //     new UpdateUser{
+            //         FirstName = "Mridul", LastName = "Islam", UserName = "Md.mridulislam12345@gmail.com",
+            //         Email = "Md.mridulislam12345@gmail.com", PasswordHash="Mridul@5701610947"
+            //     }
+            // );
         }
     }
 }

@@ -12,5 +12,8 @@ namespace Car_House.Models
         Car Add(Car car);
         Car Update(Car carChanges);
         Car Delete(int id);
+        UpdateUser Modify(UpdateUser userChanges);
+        UpdateUser GetUser(string name);
+        UpdateUser DeleteUser(string name);
     }
 }

@@ -14402,8 +14402,18 @@
   "RootNamespace": "Car_House",
   "Documents": [
     {
+      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Admin\\Index.cshtml",
+      "TargetPath": "Views\\Admin\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Car\\Index.cshtml",
       "TargetPath": "Views\\Car\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Shared\\LogIn_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\LogIn_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14427,8 +14437,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Car\\Delete.cshtml",
+      "TargetPath": "Views\\Car\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Admin\\ChangePassword.cshtml",
+      "TargetPath": "Views\\Admin\\ChangePassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Admin\\LogIn.cshtml",
+      "TargetPath": "Views\\Admin\\LogIn.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14457,6 +14482,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Admin\\Register.cshtml",
+      "TargetPath": "Views\\Admin\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\User\\LogIn.cshtml",
       "TargetPath": "Views\\User\\LogIn.cshtml",
       "FileKind": "mvc"
@@ -14479,6 +14509,11 @@
     {
       "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Car\\Create.cshtml",
       "TargetPath": "Views\\Car\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\UNIVERSITY WORK\\last semester\\InternShip\\Git\\Car-House\\Views\\Admin\\AccountDelete.cshtml",
+      "TargetPath": "Views\\Admin\\AccountDelete.cshtml",
       "FileKind": "mvc"
     },
     {
