@@ -82,12 +82,12 @@ namespace Car_House.Controllers
         }
 
         [HttpPost][AllowAnonymous]
-        public async Task<IActionResult> LogIn(LogInViewModel model){
+        public async Task<IActionResult> LogIn(LogInViewModel model, string name){
             if(ModelState.IsValid){
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password,
                                                     model.RememberMe, false);
                 if(result.Succeeded){
-                    return RedirectToAction("index", "Car");
+                    return RedirectToAction("Profile", "Admin", new{name = name});
                 }
                 ModelState.AddModelError("", "Invalid LogIn Attempt");
             }
@@ -114,12 +114,16 @@ namespace Car_House.Controllers
             UpdateUser user = _adminWork.GetUser(name);
             if(user == null) 
             {
-                return RedirectToAction("Login", "Admin");
+                return RedirectToAction("index", "Car");
             }
 
             string pp = null;
-            if (user.ProfilePicture == null) pp = "Person.jpg";
-            else pp = user.ProfilePicture;
+            if (user.ProfilePicture == null) {
+                pp = "~/images/person.jpg";
+            }
+            else {
+                pp = user.ProfilePicture;
+            }
 
             ProfileViewModel profileView = new ProfileViewModel
             {
@@ -132,22 +136,37 @@ namespace Car_House.Controllers
             return View(profileView);
         }
 
+        // public string ProcessUploadedFile(ProfileViewModel model){
+        //     string uniqueFileName = null;
+        //         if(model.Images!=null){
+        //                 string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+        //                 //for uniquely recognize use the guid class
+        //                 uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Images.FileName;
+        //                 string filepath = Path.Combine(uploadsFolder, uniqueFileName);
+        //                 using (var fileStream = new FileStream(filepath, FileMode.Create)){
+        //                     model.Images.CopyTo(fileStream);
+        //                 }
+                        
+        //             //}
+        //         }
+        //         return uniqueFileName;
+        // }
+
         public string ProcessUploadedFile(ProfileViewModel model){
             string uniqueFileName = null;
-                if(model.Images!=null){
-                    //foreach(IFormFile image in model.Images){
-                        // WebRoot will help to reach to wwwroot folder
-                        string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
-                        //for uniquely recognize use the guid class
-                        uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Images.FileName;
-                        string filepath = Path.Combine(uploadsFolder, uniqueFileName);
-                        using (var fileStream = new FileStream(filepath, FileMode.Create)){
-                            model.Images.CopyTo(fileStream);
+            if(model.Images!=null && model.Images.Count>0){
+                foreach(IFormFile image in model.Images){
+                    string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath,
+                        "images");
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + image.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    using(var fileStream = new FileStream(filePath, 
+                        FileMode.Create)){
+                            image.CopyTo(fileStream);
                         }
-                        
-                    //}
                 }
-                return uniqueFileName;
+            }
+            return uniqueFileName;
         }
 
 
@@ -165,28 +184,43 @@ namespace Car_House.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateProfile(ProfileViewModel model, string name){
+        public IActionResult UpdateProfile(ProfileViewModel model){
             if(ModelState.IsValid){
+
+                UpdateUser updateUser = _adminWork.GetUser(model.UserID);
+
+                updateUser.FirstName = model.FirstName;
+                updateUser.LastName = model.LastName;
+                if(model.Images != null){
+                    if(model.ProfilePicture != null){
+                        string filePath = Path.Combine(_hostingEnvironment.WebRootPath,
+                            "images", model.ProfilePicture);
+                        System.IO.File.Delete(filePath);
+                    }
+                    updateUser.ProfilePicture = ProcessUploadedFile(model);
+                }
+                _adminWork.Modify(updateUser);
+                return RedirectToAction("Profile");
                 //var upUser = await _userManager.FindByNameAsync(name);
                 // var email = upUser.UserName;
                 // UpdateUser user = _userManager.Users.FirstOrDefault(x => x.UserName == email);
-                UpdateUser upUser = _adminWork.GetUser(name);                
+            //     UpdateUser upUser = _adminWork.GetUser(name);                
 
-                upUser.FirstName = model.FirstName;
-                upUser.LastName = model.LastName;
-                //upUser.ProfilePicture = model.Images.ToString();
-                if(model.Images != null){
-                    if(model.ProfilePicture != null){
-                        string filePath = Path.Combine(_hostingEnvironment.WebRootPath,"images",
-                            model.ProfilePicture);
-                        System.IO.File.Delete(filePath);
-                    }
-                    upUser.ProfilePicture = ProcessUploadedFile(model);
-                }
-                _adminWork.Modify(upUser);
-                //_userManager.Users.Modify(upUser);
+            //     upUser.FirstName = model.FirstName;
+            //     upUser.LastName = model.LastName;
+            //     //upUser.ProfilePicture = model.Images.ToString();
+            //     if(model.Images != null){
+            //         if(model.ProfilePicture != null){
+            //             string filePath = Path.Combine(_hostingEnvironment.WebRootPath,"images",
+            //                 model.ProfilePicture);
+            //             System.IO.File.Delete(filePath);
+            //         }
+            //         upUser.ProfilePicture = ProcessUploadedFile(model);
+            //     }
+            //     _adminWork.Modify(upUser);
+            //     //_userManager.Users.Modify(upUser);
 
-                return RedirectToAction("Profile", "Admin");
+            //     return RedirectToAction("Profile", "Admin", new{name = name});
             }
             return View();
         }
@@ -196,7 +230,7 @@ namespace Car_House.Controllers
         }
 
         [HttpGet]
-        public IActionResult AccountDelete(string name){
+        public IActionResult DeleteUser(string name){
             UpdateUser updateUser = _adminWork.GetUser(name);
             ProfileViewModel deleteProfile = new ProfileViewModel
             {
@@ -208,14 +242,15 @@ namespace Car_House.Controllers
             return View(deleteProfile);
         }
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("DeleteUser")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(string name)
         {
+            //var user = _adminWork.GetUser(name);
             
-            //var car = _carRepository.GetCar(id);
             _adminWork.DeleteUser(name);
-            return RedirectToAction("Profile", "Admin");
+            
+            return RedirectToAction(nameof(Index));
         }
 
         

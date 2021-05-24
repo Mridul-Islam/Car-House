@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 
 
 
@@ -29,5 +31,7 @@ namespace Car_House.ViewModels
         [Compare("Password", 
         ErrorMessage = "password and confirm password do not match")]
         public string ConfirmPassword{get; set;}
+
+        //public List<IFormFile> Images { get; set; }
     }
 }

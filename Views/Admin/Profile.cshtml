@@ -4,7 +4,9 @@
 @{
     ViewBag.Title = "Admin Profile";
     Layout = "~/Views/Shared/Admin_Layout.cshtml";
-    var pp = "~/images/" + (Model.ProfilePicture ?? "gdCar.jpg");
+    var Images = (Model.ProfilePicture ?? "person.jpg");
+    @* var Images = "~/images/" + (Model.updateUser.ProfilePicture ?? "gdCar.jpg"); *@
+    @* var Images = "~/images/" + (Model.updateUser.ProfilePicture ?? "gdCar.jpg"); *@
 }
 
 
@@ -21,7 +23,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" asp-controller="Admin" asp-action="UpdateProfile" asp-route-name="@User.Identity.Name"><u>Update Profile</u></a>
                     <a class="dropdown-item" asp-controller="Admin" asp-action="ChangePassword" asp-route-name="@User.Identity.Name"><u>Change Password</u></a>
-                    <a class="dropdown-item" asp-controller="Admin" asp-action="AccountDelete" asp-route-name="@User.Identity.Name"><u>Delete Account</u></a>
+                    <a class="dropdown-item" asp-controller="Admin" asp-action="DeleteUser" asp-route-name="@User.Identity.Name"><u>Delete Account</u></a>
                 </div>
             </div>
         
@@ -48,7 +50,7 @@
 
         <div class="card m-auto col-md-6 col-lg-4 col-sm-12 mt-2">
             <div class="card-body">
-                <img src="@pp" class="" style="width:100%;" alt="No Image" asp-append-version="true" />
+                <img src="@Images" class="" style="width:100%;" alt="No Image" asp-append-version="true" />
             </div>
         </div>
 

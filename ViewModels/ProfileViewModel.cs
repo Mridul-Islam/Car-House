@@ -1,12 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
+using Car_House.Models;
 
 
 namespace Car_House.ViewModels
 {
     public class ProfileViewModel
     {
+        //public UpdateUser updateUser {get; set;}
+
         [EmailAddress]
         [Display(Name = " Email Address : ")]
         public string UserID { get; set; }
@@ -45,6 +48,6 @@ namespace Car_House.ViewModels
 
 
          [Display(Name = "Select Image")]
-         public IFormFile Images { get; set; }
+         public List<IFormFile> Images { get; set; }
     }
 }

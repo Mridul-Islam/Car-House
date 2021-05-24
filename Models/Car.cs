@@ -50,15 +50,23 @@ namespace Car_House.Models
     public enum Category
     {
         Sedan,
+        Coupe,
+        [Display(Name = "Station Wagon")]
+        StationWagon,
+        HatchBack,
+        Convertable,
         Suv,
         Sport,
-        Minivan
+        Minivan,
+        [Display(Name="PickUp Truck")]
+        PickupTruck
     }
     public enum SteeringType
     {
         PowerSteering, 
         ManualSteering
     }
+
 
 
     public class Car

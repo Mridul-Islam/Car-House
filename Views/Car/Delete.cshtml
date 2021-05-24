@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
 }
 
 <h1>Delete</h1>
@@ -11,31 +12,31 @@
     <h4>Car</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-2" style="color: white;">
             @Html.DisplayNameFor(model => model.CarDescription)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CarDescription)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-2" style="color: white;">
             @Html.DisplayNameFor(model => model.Category)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Category)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-2" style="color: white;">
             @Html.DisplayNameFor(model => model.BrandName)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.BrandName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-2" style="color: white;">
             @Html.DisplayNameFor(model => model.Model)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Model)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-2" style="color: white;">
             @Html.DisplayNameFor(model => model.Price)
         </dt>
         <dd class = "col-sm-10">
