@@ -1,1 +1,0 @@
-This is a web-application. This will help a Car Showroom to maintain all work.
