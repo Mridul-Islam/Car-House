@@ -1,34 +1,37 @@
-<!-- Admin_header -->
+<!-- Header -->
 @include('includes.admin_header')
 
-    <!-- Admin Side Nav -->
-    @include('includes.admin_side_nav')
+    <!-- Navigation -->
+    @include('includes.admin_nav')
 
-      <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
 
-        <!-- Admin Top Nav -->
-        @include('includes.admin_top_nav')
 
-        <!-- partial -->
-        <div class="main-panel">
-          <div class="content-wrapper">
+<!-- Container -->
+<div class="container" style="margin-top: 10px">
+    <!-- PAGE CONTENT-->
+    <div class="page-content--bgf7">
 
-            @yield('content')
+        @yield('content')
 
-          </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © MridulIslam.com 2022</span>
+        <!-- COPYRIGHT-->
+        <section class="p-t-60 p-b-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            <p>Copyright © 2022 Car-House. All rights reserved. Template by Mridul Islam.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </footer>
-          <!-- partial -->
-        </div>
-        <!-- main-panel ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
+        </section>
+        <!-- END COPYRIGHT-->
+    </div>
+    <!-- ../Page Content -->
+</div>
 
-<!-- Admin Footer -->
+
+
+
+<!-- Footer -->
 @include('includes.admin_footer')

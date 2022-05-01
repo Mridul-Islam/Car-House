@@ -17,29 +17,37 @@ mix.js('resources/js/app.js', 'public/js')
 
 
 mix.styles([
-    'resources/css/admin/vendors/mdi/css/materialdesignicons.min.css',
-    'resources/css/admin/vendors/css/vendor.bundle.base.css',
-    'resources/css/admin/vendors/jvectormap/jquery-jvectormap.css',
-    'resources/css/admin/vendors/flag-icon-css/css/flag-icon.min.css',
-    'resources/css/admin/vendors/owl-carousel-2/owl.carousel.min.css',
-    'resources/css/admin/vendors/owl-carousel-2/owl.theme.default.min.css',
-    'resources/css/admin/css/style.css'
-    
+    'resources/css/admin/css/font-face.css',
+    'resources/css/admin/vendor/font-awesome-4.7/css/font-awesome.min.css',
+    'resources/css/admin/vendor/font-awesome-5/css/fontawesome-all.min.css',
+    'resources/css/admin/vendor/mdi-font/css/material-design-iconic-font.min.css',
+    'resources/css/admin/vendor/bootstrap-4.1/bootstrap.min.css',
+    'resources/css/admin/vendor/animsition/animsition.min.css',
+    'resources/css/admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css',
+    'resources/css/admin/vendor/wow/animate.css',
+    'resources/css/admin/vendor/css-hamburgers/hamburgers.min.css',
+    'resources/css/admin/vendor/slick/slick.css',
+    'resources/css/admin/vendor/select2/select2.min.css',
+    'resources/css/admin/vendor/perfect-scrollbar/perfect-scrollbar.css',
+    'resources/css/admin/css/theme.css'
+
 ], 'public/css/admin_styles.css');
 
 
 
 mix.scripts([
-    'resources/js/admin/vendors/chart.js/Chart.min.js',
-    'resources/js/admin/vendors/progressbar.js/progressbar.min.js',
-    'resources/js/admin/vendors/jvectormap/jquery-jvectormap.min.js',
-    'resources/js/admin/vendors/jvectormap/jquery-jvectormap-world-mill-en.js',
-    'resources/js/admin/vendors/owl-carousel-2/owl.carousel.min.js',
-    'resources/js/admin/js/off-canvas.js',
-    'resources/js/admin/js/hoverable-collapse.js',
-    'resources/js/admin/js/misc.js',
-    'resources/js/admin/js/settings.js',
-    'resources/js/admin/js/todolist.js',
-    'resources/js/admin/js/dashboard.js'
+    'resources/js/admin/vendor/jquery-3.2.1.min.js',
+    'resources/js/admin/vendor/bootstrap-4.1/popper.min.js',
+    'resources/js/admin/vendor/bootstrap-4.1/bootstrap.min.js',
+    'resources/js/admin/vendor/slick/slick.min.js',
+    'resources/js/admin/vendor/animsition/animsition.min.js',
+    'resources/js/admin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js',
+    'resources/js/admin/vendor/counter-up/jquery.waypoints.min.js',
+    'resources/js/admin/vendor/counter-up/jquery.counterup.min.js',
+    'resources/js/admin/vendor/circle-progress/circle-progress.min.js',
+    'resources/js/admin/vendor/perfect-scrollbar/perfect-scrollbar.js',
+    'resources/js/admin/vendor/chartjs/Chart.bundle.min.js',
+    'resources/js/admin/vendor/select2/select2.min.js',
+    'resources/js/admin/js/main.js',
 
 ], 'public/js/admin_script.js');

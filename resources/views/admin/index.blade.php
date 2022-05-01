@@ -2,418 +2,347 @@
 
 @section('content')
 
-
-    <div class="row">
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-9">
-                            <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">$12.34</h3>
-                                <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="icon icon-box-success ">
-                                <span class="mdi mdi-arrow-top-right icon-item"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <h6 class="text-muted font-weight-normal">Potential growth</h6>
+    <!-- WELCOME-->
+    <section class="welcome p-t-10" style="padding-top: 20px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="title-4 text-center">Welcome
+                        <span>Mridul Islam!</span>
+                    </h1>
+                    <hr class="line-seprate">
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-9">
-                            <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">$17.34</h3>
-                                <p class="text-success ml-2 mb-0 font-weight-medium">+11%</p>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="icon icon-box-success">
-                                <span class="mdi mdi-arrow-top-right icon-item"></span>
-                            </div>
+    </section>
+    <!-- END WELCOME-->
+
+    <!-- STATISTIC-->
+    <section class="statistic statistic2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="statistic__item statistic__item--green">
+                        <h2 class="number">10,368</h2>
+                        <span class="desc">members online</span>
+                        <div class="icon">
+                            <i class="zmdi zmdi-account-o"></i>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Revenue current</h6>
                 </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-9">
-                            <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">$12.34</h3>
-                                <p class="text-danger ml-2 mb-0 font-weight-medium">-2.4%</p>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="icon icon-box-danger">
-                                <span class="mdi mdi-arrow-bottom-left icon-item"></span>
-                            </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="statistic__item statistic__item--orange">
+                        <h2 class="number">388,688</h2>
+                        <span class="desc">items sold</span>
+                        <div class="icon">
+                            <i class="zmdi zmdi-shopping-cart"></i>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Daily Income</h6>
                 </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-9">
-                            <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">$31.53</h3>
-                                <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="icon icon-box-success ">
-                                <span class="mdi mdi-arrow-top-right icon-item"></span>
-                            </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="statistic__item statistic__item--blue">
+                        <h2 class="number">1,086</h2>
+                        <span class="desc">this week</span>
+                        <div class="icon">
+                            <i class="zmdi zmdi-calendar-note"></i>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Expense current</h6>
                 </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div class="row">
-        <div class="col-md-4 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Transaction History</h4>
-                    <canvas id="transaction-history" class="transaction-chart"></canvas>
-                    <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                        <div class="text-md-center text-xl-left">
-                            <h6 class="mb-1">Transfer to Paypal</h6>
-                            <p class="text-muted mb-0">07 Jan 2019, 09:12AM</p>
-                        </div>
-                        <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                            <h6 class="font-weight-bold mb-0">$236</h6>
-                        </div>
-                    </div>
-                    <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                        <div class="text-md-center text-xl-left">
-                            <h6 class="mb-1">Tranfer to Stripe</h6>
-                            <p class="text-muted mb-0">07 Jan 2019, 09:12AM</p>
-                        </div>
-                        <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                            <h6 class="font-weight-bold mb-0">$593</h6>
+                <div class="col-md-6 col-lg-3">
+                    <div class="statistic__item statistic__item--red">
+                        <h2 class="number">$1,060,386</h2>
+                        <span class="desc">total earnings</span>
+                        <div class="icon">
+                            <i class="zmdi zmdi-money"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-8 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex flex-row justify-content-between">
-                        <h4 class="card-title mb-1">Open Projects</h4>
-                        <p class="text-muted mb-1">Your data status</p>
+    </section>
+    <!-- END STATISTIC-->
+
+    <!-- STATISTIC CHART-->
+    <section class="statistic-chart">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title-5 m-b-35">statistics</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <!-- CHART-->
+                    <div class="statistic-chart-1">
+                        <h3 class="title-3 m-b-30">chart</h3>
+                        <div class="chart-wrap">
+                            <canvas id="widgetChart5"></canvas>
+                        </div>
+                        <div class="statistic-chart-1-note">
+                            <span class="big">10,368</span>
+                            <span>/ 16220 items sold</span>
+                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="preview-list">
-                                <div class="preview-item border-bottom">
-                                    <div class="preview-thumbnail">
-                                        <div class="preview-icon bg-primary">
-                                            <i class="mdi mdi-file-document"></i>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item-content d-sm-flex flex-grow">
-                                        <div class="flex-grow">
-                                            <h6 class="preview-subject">Admin dashboard design</h6>
-                                            <p class="text-muted mb-0">Broadcast web app mockup</p>
-                                        </div>
-                                        <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                            <p class="text-muted">15 minutes ago</p>
-                                            <p class="text-muted mb-0">30 tasks, 5 issues </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="preview-item border-bottom">
-                                    <div class="preview-thumbnail">
-                                        <div class="preview-icon bg-success">
-                                            <i class="mdi mdi-cloud-download"></i>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item-content d-sm-flex flex-grow">
-                                        <div class="flex-grow">
-                                            <h6 class="preview-subject">Wordpress Development</h6>
-                                            <p class="text-muted mb-0">Upload new design</p>
-                                        </div>
-                                        <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                            <p class="text-muted">1 hour ago</p>
-                                            <p class="text-muted mb-0">23 tasks, 5 issues </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="preview-item border-bottom">
-                                    <div class="preview-thumbnail">
-                                        <div class="preview-icon bg-info">
-                                            <i class="mdi mdi-clock"></i>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item-content d-sm-flex flex-grow">
-                                        <div class="flex-grow">
-                                            <h6 class="preview-subject">Project meeting</h6>
-                                            <p class="text-muted mb-0">New project discussion</p>
-                                        </div>
-                                        <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                            <p class="text-muted">35 minutes ago</p>
-                                            <p class="text-muted mb-0">15 tasks, 2 issues</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="preview-item border-bottom">
-                                    <div class="preview-thumbnail">
-                                        <div class="preview-icon bg-danger">
-                                            <i class="mdi mdi-email-open"></i>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item-content d-sm-flex flex-grow">
-                                        <div class="flex-grow">
-                                            <h6 class="preview-subject">Broadcast Mail</h6>
-                                            <p class="text-muted mb-0">Sent release details to team</p>
-                                        </div>
-                                        <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                            <p class="text-muted">55 minutes ago</p>
-                                            <p class="text-muted mb-0">35 tasks, 7 issues </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="preview-item">
-                                    <div class="preview-thumbnail">
-                                        <div class="preview-icon bg-warning">
-                                            <i class="mdi mdi-chart-pie"></i>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item-content d-sm-flex flex-grow">
-                                        <div class="flex-grow">
-                                            <h6 class="preview-subject">UI Design</h6>
-                                            <p class="text-muted mb-0">New application planning</p>
-                                        </div>
-                                        <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                            <p class="text-muted">50 minutes ago</p>
-                                            <p class="text-muted mb-0">27 tasks, 4 issues </p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- END CHART-->
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <!-- TOP CAMPAIGN-->
+                    <div class="top-campaign">
+                        <h3 class="title-3 m-b-30">top campaigns</h3>
+                        <div class="table-responsive">
+                            <table class="table table-top-campaign">
+                                <tbody>
+                                <tr>
+                                    <td>1. Australia</td>
+                                    <td>$70,261.65</td>
+                                </tr>
+                                <tr>
+                                    <td>2. United Kingdom</td>
+                                    <td>$46,399.22</td>
+                                </tr>
+                                <tr>
+                                    <td>3. Turkey</td>
+                                    <td>$35,364.90</td>
+                                </tr>
+                                <tr>
+                                    <td>4. Germany</td>
+                                    <td>$20,366.96</td>
+                                </tr>
+                                <tr>
+                                    <td>5. France</td>
+                                    <td>$10,366.96</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END TOP CAMPAIGN-->
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <!-- CHART PERCENT-->
+                    <div class="chart-percent-2">
+                        <h3 class="title-3 m-b-30">chart by %</h3>
+                        <div class="chart-wrap">
+                            <canvas id="percent-chart2"></canvas>
+                            <div id="chartjs-tooltip">
+                                <table></table>
+                            </div>
+                        </div>
+                        <div class="chart-info">
+                            <div class="chart-note">
+                                <span class="dot dot--blue"></span>
+                                <span>products</span>
+                            </div>
+                            <div class="chart-note">
+                                <span class="dot dot--red"></span>
+                                <span>Services</span>
                             </div>
                         </div>
                     </div>
+                    <!-- END CHART PERCENT-->
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- END STATISTIC CHART-->
 
-
-
-
-    <div class="row">
-        <div class="col-sm-4 grid-margin">
-            <div class="card">
-                <div class="card-body">
-                    <h5>Revenue</h5>
-                    <div class="row">
-                        <div class="col-8 col-sm-12 col-xl-8 my-auto">
-                            <div class="d-flex d-sm-block d-md-flex align-items-center">
-                                <h2 class="mb-0">$32123</h2>
-                                <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
+    <!-- DATA TABLE-->
+    <section class="p-t-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title-5 m-b-35">data table</h3>
+                    <div class="table-data__tool">
+                        <div class="table-data__tool-left">
+                            <div class="rs-select2--light rs-select2--md">
+                                <select class="js-select2" name="property">
+                                    <option selected="selected">All Properties</option>
+                                    <option value="">Option 1</option>
+                                    <option value="">Option 2</option>
+                                </select>
+                                <div class="dropDownSelect2"></div>
                             </div>
-                            <h6 class="text-muted font-weight-normal">11.38% Since last month</h6>
+                            <div class="rs-select2--light rs-select2--sm">
+                                <select class="js-select2" name="time">
+                                    <option selected="selected">Today</option>
+                                    <option value="">3 Days</option>
+                                    <option value="">1 Week</option>
+                                </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
+                            <button class="au-btn-filter">
+                                <i class="zmdi zmdi-filter-list"></i>filters</button>
                         </div>
-                        <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                            <i class="icon-lg mdi mdi-codepen text-primary ml-auto"></i>
+                        <div class="table-data__tool-right">
+                            <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                <i class="zmdi zmdi-plus"></i>add item</button>
+                            <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                <select class="js-select2" name="type">
+                                    <option selected="selected">Export</option>
+                                    <option value="">Option 1</option>
+                                    <option value="">Option 2</option>
+                                </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4 grid-margin">
-            <div class="card">
-                <div class="card-body">
-                    <h5>Sales</h5>
-                    <div class="row">
-                        <div class="col-8 col-sm-12 col-xl-8 my-auto">
-                            <div class="d-flex d-sm-block d-md-flex align-items-center">
-                                <h2 class="mb-0">$45850</h2>
-                                <p class="text-success ml-2 mb-0 font-weight-medium">+8.3%</p>
-                            </div>
-                            <h6 class="text-muted font-weight-normal"> 9.61% Since last month</h6>
-                        </div>
-                        <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                            <i class="icon-lg mdi mdi-wallet-travel text-danger ml-auto"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4 grid-margin">
-            <div class="card">
-                <div class="card-body">
-                    <h5>Purchase</h5>
-                    <div class="row">
-                        <div class="col-8 col-sm-12 col-xl-8 my-auto">
-                            <div class="d-flex d-sm-block d-md-flex align-items-center">
-                                <h2 class="mb-0">$2039</h2>
-                                <p class="text-danger ml-2 mb-0 font-weight-medium">-2.1% </p>
-                            </div>
-                            <h6 class="text-muted font-weight-normal">2.27% Since last month</h6>
-                        </div>
-                        <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                            <i class="icon-lg mdi mdi-monitor text-success ml-auto"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div class="row ">
-        <div class="col-12 grid-margin">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Order Status</h4>
-                    <div class="table-responsive">
-                        <table class="table">
+                    <div class="table-responsive table-responsive-data2">
+                        <table class="table table-data2">
                             <thead>
                             <tr>
                                 <th>
-                                    <div class="form-check form-check-muted m-0">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input">
-                                        </label>
-                                    </div>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
                                 </th>
-                                <th> Client Name </th>
-                                <th> Order No </th>
-                                <th> Product Cost </th>
-                                <th> Project </th>
-                                <th> Payment Mode </th>
-                                <th> Start Date </th>
-                                <th> Payment Status </th>
+                                <th>name</th>
+                                <th>email</th>
+                                <th>description</th>
+                                <th>date</th>
+                                <th>status</th>
+                                <th>price</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
+                            <tr class="tr-shadow">
                                 <td>
-                                    <div class="form-check form-check-muted m-0">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input">
-                                        </label>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>Lori Lynch</td>
+                                <td>
+                                    <span class="block-email">lori@example.com</span>
+                                </td>
+                                <td class="desc">Samsung S8 Black</td>
+                                <td>2018-09-27 02:12</td>
+                                <td>
+                                    <span class="status--process">Processed</span>
+                                </td>
+                                <td>$679.00</td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                            <i class="zmdi zmdi-mail-send"></i>
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                            <i class="zmdi zmdi-more"></i>
+                                        </button>
                                     </div>
-                                </td>
-                                <td>
-                                    <img src="assets/images/faces/face1.jpg" alt="image" />
-                                    <span class="pl-2">Henry Klein</span>
-                                </td>
-                                <td> 02312 </td>
-                                <td> $14,500 </td>
-                                <td> Dashboard </td>
-                                <td> Credit card </td>
-                                <td> 04 Dec 2019 </td>
-                                <td>
-                                    <div class="badge badge-outline-success">Approved</div>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="spacer"></tr>
+                            <tr class="tr-shadow">
                                 <td>
-                                    <div class="form-check form-check-muted m-0">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input">
-                                        </label>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>Lori Lynch</td>
+                                <td>
+                                    <span class="block-email">john@example.com</span>
+                                </td>
+                                <td class="desc">iPhone X 64Gb Grey</td>
+                                <td>2018-09-29 05:57</td>
+                                <td>
+                                    <span class="status--process">Processed</span>
+                                </td>
+                                <td>$999.00</td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                            <i class="zmdi zmdi-mail-send"></i>
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                            <i class="zmdi zmdi-more"></i>
+                                        </button>
                                     </div>
-                                </td>
-                                <td>
-                                    <img src="assets/images/faces/face2.jpg" alt="image" />
-                                    <span class="pl-2">Estella Bryan</span>
-                                </td>
-                                <td> 02312 </td>
-                                <td> $14,500 </td>
-                                <td> Website </td>
-                                <td> Cash on delivered </td>
-                                <td> 04 Dec 2019 </td>
-                                <td>
-                                    <div class="badge badge-outline-warning">Pending</div>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="spacer"></tr>
+                            <tr class="tr-shadow">
                                 <td>
-                                    <div class="form-check form-check-muted m-0">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input">
-                                        </label>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>Lori Lynch</td>
+                                <td>
+                                    <span class="block-email">lyn@example.com</span>
+                                </td>
+                                <td class="desc">iPhone X 256Gb Black</td>
+                                <td>2018-09-25 19:03</td>
+                                <td>
+                                    <span class="status--denied">Denied</span>
+                                </td>
+                                <td>$1199.00</td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                            <i class="zmdi zmdi-mail-send"></i>
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                            <i class="zmdi zmdi-more"></i>
+                                        </button>
                                     </div>
-                                </td>
-                                <td>
-                                    <img src="assets/images/faces/face5.jpg" alt="image" />
-                                    <span class="pl-2">Lucy Abbott</span>
-                                </td>
-                                <td> 02312 </td>
-                                <td> $14,500 </td>
-                                <td> App design </td>
-                                <td> Credit card </td>
-                                <td> 04 Dec 2019 </td>
-                                <td>
-                                    <div class="badge badge-outline-danger">Rejected</div>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="spacer"></tr>
+                            <tr class="tr-shadow">
                                 <td>
-                                    <div class="form-check form-check-muted m-0">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input">
-                                        </label>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>Lori Lynch</td>
+                                <td>
+                                    <span class="block-email">doe@example.com</span>
+                                </td>
+                                <td class="desc">Camera C430W 4k</td>
+                                <td>2018-09-24 19:10</td>
+                                <td>
+                                    <span class="status--process">Processed</span>
+                                </td>
+                                <td>$699.00</td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                            <i class="zmdi zmdi-mail-send"></i>
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                            <i class="zmdi zmdi-more"></i>
+                                        </button>
                                     </div>
-                                </td>
-                                <td>
-                                    <img src="assets/images/faces/face3.jpg" alt="image" />
-                                    <span class="pl-2">Peter Gill</span>
-                                </td>
-                                <td> 02312 </td>
-                                <td> $14,500 </td>
-                                <td> Development </td>
-                                <td> Online Payment </td>
-                                <td> 04 Dec 2019 </td>
-                                <td>
-                                    <div class="badge badge-outline-success">Approved</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-check form-check-muted m-0">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input">
-                                        </label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <img src="assets/images/faces/face4.jpg" alt="image" />
-                                    <span class="pl-2">Sallie Reyes</span>
-                                </td>
-                                <td> 02312 </td>
-                                <td> $14,500 </td>
-                                <td> Website </td>
-                                <td> Credit card </td>
-                                <td> 04 Dec 2019 </td>
-                                <td>
-                                    <div class="badge badge-outline-success">Approved</div>
                                 </td>
                             </tr>
                             </tbody>
@@ -422,80 +351,8 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Visitors by Countries</h4>
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <i class="flag-icon flag-icon-us"></i>
-                                        </td>
-                                        <td>USA</td>
-                                        <td class="text-right"> 1500 </td>
-                                        <td class="text-right font-weight-medium"> 56.35% </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <i class="flag-icon flag-icon-de"></i>
-                                        </td>
-                                        <td>Germany</td>
-                                        <td class="text-right"> 800 </td>
-                                        <td class="text-right font-weight-medium"> 33.25% </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <i class="flag-icon flag-icon-au"></i>
-                                        </td>
-                                        <td>Australia</td>
-                                        <td class="text-right"> 760 </td>
-                                        <td class="text-right font-weight-medium"> 15.45% </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <i class="flag-icon flag-icon-gb"></i>
-                                        </td>
-                                        <td>United Kingdom</td>
-                                        <td class="text-right"> 450 </td>
-                                        <td class="text-right font-weight-medium"> 25.00% </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <i class="flag-icon flag-icon-ro"></i>
-                                        </td>
-                                        <td>Romania</td>
-                                        <td class="text-right"> 620 </td>
-                                        <td class="text-right font-weight-medium"> 10.25% </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <i class="flag-icon flag-icon-br"></i>
-                                        </td>
-                                        <td>Brasil</td>
-                                        <td class="text-right"> 230 </td>
-                                        <td class="text-right font-weight-medium"> 75.00% </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div id="audience-map" class="vector-map"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
+    <!-- END DATA TABLE-->
 
 @stop
 
