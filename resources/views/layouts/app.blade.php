@@ -41,6 +41,9 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
+                        <li class="nav-item">
+                            <a href="{{ route('admin.home') }}" class="nav-link">Admin</a>
+                        </li>
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">

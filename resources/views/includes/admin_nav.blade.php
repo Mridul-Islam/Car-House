@@ -12,13 +12,14 @@
                 <ul class="list-unstyled">
                     <li class="has-sub">
                         <a href="{{ route('admin.home') }}">
-                            <i class="fas fa-tachometer-alt"></i>
+{{--                            <i class="fas fa-tachometer-alt"></i>--}}
                             Dashboard
                             <span class="bot-line"></span>
                         </a>
+                    </li>
                     <li class="has-sub">
                         <a href="#">
-                            <i class="fas fa-shopping-basket"></i>
+{{--                            <i class="fas fa-shopping-basket"></i>--}}
                             <span class="bot-line"></span>
                             Users
                         </a>
@@ -33,7 +34,7 @@
                     </li>
                     <li class="has-sub">
                         <a href="#">
-                            <i class="fas fa-copy"></i>
+{{--                            <i class="fas fa-copy"></i>--}}
                             <span class="bot-line"></span>
                             Brands
                         </a>
@@ -48,7 +49,7 @@
                     </li>
                     <li class="has-sub">
                         <a href="table.html">
-                            <i class="fas fa-trophy"></i>
+{{--                            <i class="fas fa-trophy"></i>--}}
                             <span class="bot-line"></span>
                             Cars
                         </a>
@@ -60,6 +61,12 @@
                                 <a href="{{ route('cars.create') }}">Add new Car</a>
                             </li>
                         </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a href="{{ route('home') }}">
+                            Home
+                            <span class="bot-line"></span>
+                        </a>
                     </li>
                 </ul>
             </div>

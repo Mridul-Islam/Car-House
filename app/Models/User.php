@@ -16,16 +16,17 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'image_id'
+        'image_id',
+        'role_id'
     ];
 
-    
+
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-   
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
@@ -34,7 +35,7 @@ class User extends Authenticatable
         return $this->hasMany(Car::class);
     }
 
-    public function photo(){
+    public function image(){
         return $this->belongsTo(Image::class);
     }
 
