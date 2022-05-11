@@ -57,8 +57,10 @@ class AdminBrandsController extends Controller
         $input = $request->all();
         if($file = $request->file('image_id')){
             // delete previous image
-            unlink(public_path() . "/images/" . $brand->image->name);
-            $brand->image->delete();
+            if($brand->image_id){
+                unlink(public_path() . "/images/" . $brand->image->name);
+                $brand->image->delete();
+            }
             // save new image
             $name = time() . $file->getClientOriginalName();
             $file->move('images', $name);

@@ -10,6 +10,7 @@ class Car extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'model_name',
         'price',
         'brand_id',
@@ -29,7 +30,7 @@ class Car extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function photo(){
+    public function image(){
         return $this->belongsTo(Image::class);
     }
 
