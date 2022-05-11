@@ -20,7 +20,7 @@
                     <div class="col-md-12">
                         <div class="copyright">
                             <hr>
-                            <p>Copyright © 2022 Car-House. All rights reserved. Template by Mridul Islam.</p>
+                            <p>Copyright © 2022 Car-House. All rights reserved. By Mridul Islam.</p>
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,7 @@
         <table class="table table-data2">
             <thead>
             <tr>
+                <th>Id</th>
                 <th>image</th>
                 <th>name</th>
                 <th>email</th>
@@ -20,6 +21,7 @@
             <tbody>
             @foreach($users as $user)
             <tr class="tr-shadow">
+                <td>{{ $user->id }}</td>
                 <td><img src="{{ $user->image_id ? "../images/" . $user->image->name: '../images/user_logo.png' }}" width="120px"/></td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>

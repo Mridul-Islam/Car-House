@@ -2,23 +2,20 @@
 
 @section('content')
 
-    <h2 class="text-center bg-info">Create New User</h2>
+    <h2 class="text-center bg-info">Update User</h2>
     <hr>
 
-    <div>
-        <div class="col-md-8 m-auto" style="font-size: 14px;">
-            @if(count($errors) > 0)
-                <div class="alert alert-danger well">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+    <div class="">
+        <div class="col-md-4" style="float: left;">
+            <div class="container-fluid">
+                <img class="img-thumbnail" src="{{ $user->image_id ? "../../../images/" . $user->image->name : "../../../images/user_logo.png" }}" alt="" width="300px">
+            </div>
+            <div class="" style="font-size: 14px;">
+                @include('includes.form_error')
+            </div>
         </div>
 
-        <div class="col-md-8 m-auto">
+        <div class="col-md-8" style="overflow: hidden;">
             {!! Form::model($user, ['method'=>'PATCH', 'route'=>['users.update', $user->id], 'files'=>true]) !!}
             <div class="form-group">
                 {!! Form::label('name', "Name:") !!}
@@ -41,7 +38,7 @@
                 {!! Form::password('password', ['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::submit('Create User', ['class'=>'form-control btn btn-primary']) !!}
+                {!! Form::submit('Update User', ['class'=>'form-control btn btn-primary']) !!}
             </div>
             {!! Form::close() !!}
         </div>

@@ -6,19 +6,11 @@
     <hr>
 
     <div>
-        <div class="col-md-6 m-auto" style="font-size: 12px;">
-            @if(count($errors) > 0)
-                <div class="alert alert-danger well">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+        <div class="col-md-3 m-auto" style="font-size: 12px; float: left">
+            @include('includes.form_error')
         </div>
 
-        <div class="col-md-6 m-auto">
+        <div class="col-md-6" style="overflow: hidden;">
             {!! Form::open(['method'=>'post', 'route'=>'users.store', 'files'=>true]) !!}
             <div class="form-group">
                 {!! Form::label('name', "Name:") !!}
