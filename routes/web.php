@@ -20,8 +20,10 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.home');
+Route::group(['middleware'=> 'auth'], function (){
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.home');
 
-Route::resource('/admin/users', AdminUsersController::class);
-Route::resource('/admin/brands', AdminBrandsController::class);
-Route::resource('/admin/cars', AdminCarsController::class);
+    Route::resource('/admin/users', AdminUsersController::class);
+    Route::resource('/admin/brands', AdminBrandsController::class);
+    Route::resource('/admin/cars', AdminCarsController::class);
+});

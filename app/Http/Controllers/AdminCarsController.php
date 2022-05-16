@@ -8,6 +8,7 @@ use App\Models\Brand;
 use App\Models\Car;
 use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use function Symfony\Component\Translation\t;
 
 class AdminCarsController extends Controller
@@ -30,6 +31,7 @@ class AdminCarsController extends Controller
     public function store(CreateCarRequest $request)
     {
         $input = $request->all();
+        $input['user_id'] = Auth::user()->id;
         if($file = $request->file('image_id')){
             $name = time() . $file->getClientOriginalName();
             $file->move('images', $name);
