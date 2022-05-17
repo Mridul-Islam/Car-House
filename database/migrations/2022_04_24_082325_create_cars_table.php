@@ -17,15 +17,15 @@ class CreateCarsTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('model_name')->unique();
-            $table->double('price');
+            $table->text('price');
             $table->integer('brand_id');
             $table->string('color');
             $table->integer('noOfSeats');
-            $table->double('warrenty')->default(0);
+            $table->text('engine_type');
+            $table->string('fuel_tank_capacity');
             $table->text('image_id');
             $table->integer('mileage');
             $table->string('fuel_type');
-            $table->double('tank_size');
             $table->string('condition');
             $table->string('gear_type');
             $table->text('description');

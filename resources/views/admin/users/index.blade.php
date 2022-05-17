@@ -22,7 +22,7 @@
             @foreach($users as $user)
             <tr class="tr-shadow">
                 <td>{{ $user->id }}</td>
-                <td><img src="{{ $user->image_id ? "../images/" . $user->image->name: '../images/user_logo.png' }}" width="120px"/></td>
+                <td><img src="{{ $user->image_id ? asset('images/' . $user->image->name) : asset('images/user_logo.png') }}" width="120px"/></td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->role->name}}</td>

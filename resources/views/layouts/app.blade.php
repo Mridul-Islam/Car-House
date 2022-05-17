@@ -25,7 +25,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-secondary shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-secondary shadow-sm"  style="position: fixed; top: 0; width: 100%;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <!-- {{ config('app.name', 'Laravel') }} -->
@@ -97,12 +97,12 @@
             </div>
         </nav>
 
-        <main>
+        <main style="margin-top: 55px">
             @yield('content')
         </main>
 
         <!-- Footer-->
-        <footer class="py-3 bg-dark" style="position: fixed; bottom: 0; width: 100%;">
+        <footer class="py-3 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
         </footer>
     </div>

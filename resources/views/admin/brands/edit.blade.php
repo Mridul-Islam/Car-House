@@ -8,7 +8,7 @@
     <div class="">
         <div class="col-md-4" style="float: left;">
             <div class="container-fluid">
-                <img class="img-thumbnail" src="{{ $brand->image_id ? "../../../images/" . $brand->image->name : "../../../images/user_logo.png" }}" alt="" width="300px">
+                <img class="img-thumbnail" src="{{ $brand->image_id ? asset("images/" . $brand->image->name) : "No Image" }}" alt="" width="300px">
             </div>
             <div class="" style="font-size: 14px;">
                 @include('includes.form_error')

@@ -5,7 +5,7 @@
     <div class="justify-content-center">
 
         <!-- Header-->
-        <header class="bg-dark py-1">
+        <header class="bg-dark">
             <div class="container px-4 px-lg-5 my-4">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">Car House</h1>
@@ -15,15 +15,17 @@
         </header>
 
         <!-- Section-->
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
+        <section class="py-2">
+            <div class="container px-3 px-lg-4 mt-4">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
                     @foreach($cars as $car)
                         <div class="col mb-5">
                             <div class="card h-100">
                                 <!-- Product image-->
-                                <img class="card-img-top" src="images/{{ $car->image->name }}" alt="..." height="150px"/>
+                                <a href="{{ route('carDetail', $car->id) }}">
+                                    <img class="card-img-top" src={{ asset("images/" . $car->image->name) }} alt="..." height="150px"/>
+                                </a>
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">

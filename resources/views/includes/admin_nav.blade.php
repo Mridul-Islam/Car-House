@@ -4,7 +4,7 @@
         <div class="header3-wrap">
             <div class="header__logo font-weight-bold">
                 <a href="{{ route('admin.home') }}" onmouseover="this.style.color='#a5b1c2'" onmouseout="this.style.color='#d1d8e0'" style="color: #d1d8e0">
-                    <img src="images/bmw-logo.jpg" alt="" width="60px"/>
+                    <img src="{{ asset('images/bmw-logo.jpg') }}" alt="" width="60px"/>
                     Car-House
                 </a>
             </div>
@@ -73,19 +73,19 @@
             <div class="header__tool">
                 <div class="account-wrap">
                     <div class="account-item account-item--style2 clearfix js-item-menu">
-{{--                        <div class="image">--}}
-{{--                            <img src="../images/mridul.jpg" alt="John Doe" />--}}
-{{--                        </div>--}}
+                        <div class="image">
+                            <img src="{{ Auth::user()->image_id ? asset('images/' . Auth::user()->image->name) : asset('images/user_logo.png') }}" alt="user-image" />
+                        </div>
                         <div class="content">
                             <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
                         </div>
                         <div class="account-dropdown js-dropdown">
                             <div class="info clearfix">
-{{--                                <div class="image">--}}
-{{--                                    <a href="#">--}}
-{{--                                        <img src="../images/mridul.jpg" alt="John Doe" />--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="{{ Auth::user()->image_id ? asset('images/' . Auth::user()->image->name) : asset('images/user_logo.png') }}" alt="user-image" />
+                                    </a>
+                                </div>
                                 <div class="content">
                                     <h5 class="name">
                                         <a href="#">{{ Auth::user()->name }}</a>
@@ -122,7 +122,7 @@
         <div class="container-fluid">
             <div class="header-mobile-inner">
                 <a href="{{ route('admin.home') }}">
-                    {{--                    <img src="images/bmw-logo.jpg" alt="Car-House" width="60px"/>--}}
+                        <img src="{{ asset('images/bmw-logo.jpg') }}" alt="Car-House" width="60px"/>
                     Car-House
                 </a>
                 <button class="hamburger hamburger--slider" type="button">
@@ -202,19 +202,19 @@
     <div class="header__tool">
         <div class="account-wrap">
             <div class="account-item account-item--style2 clearfix js-item-menu">
-                {{--                        <div class="image">--}}
-                {{--                            <img src="../images/mridul.jpg" alt="John Doe" />--}}
-                {{--                        </div>--}}
+                    <div class="image">
+                        <img src="{{ Auth::user()->image_id ? asset('images/' . Auth::user()->image->name) : asset('images/user_logo.png') }}" alt="John Doe" />
+                    </div>
                 <div class="content">
                     <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
                 </div>
                 <div class="account-dropdown js-dropdown">
                     <div class="info clearfix">
-                        {{--                                <div class="image">--}}
-                        {{--                                    <a href="#">--}}
-                        {{--                                        <img src="../images/mridul.jpg" alt="John Doe" />--}}
-                        {{--                                    </a>--}}
-                        {{--                                </div>--}}
+                            <div class="image">
+                                <a href="#">
+                                    <img src="{{ Auth::user()->image_id ? asset('images/' . Auth::user()->image->name) : asset('images/user_logo.png') }}" alt="user-image" />
+                                </a>
+                            </div>
                         <div class="content">
                             <h5 class="name">
                                 <a href="#">{{ Auth::user()->name }}</a>

@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 {!! Form::label('price', 'Price:') !!}
-                {!! Form::number('price', null, ['class'=>'form-control']) !!}
+                {!! Form::text('price', null, ['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('color', 'Color:') !!}
@@ -30,8 +30,8 @@
                 {!! Form::number('noOfSeats', null, ['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::label('warrenty', 'Warrenty Time:') !!}
-                {!! Form::number('warrenty', null, ['class'=>'form-control']) !!}
+                {!! Form::label('fuel_tank_capacity', 'Fuel Tank Capacity:') !!}
+                {!! Form::text('fuel_tank_capacity', null, ['class'=>'form-control']) !!}
             </div>
         </div>
         <div class="col-md-4" style="float: left; overflow: hidden;">
@@ -40,8 +40,8 @@
                 {!! Form::number('mileage', null, ['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::label('tank_size', 'Oil Tank Size:') !!}
-                {!! Form::number('tank_size', null, ['class'=>'form-control']) !!}
+                {!! Form::label('engine_type', 'Engine Type:') !!}
+                {!! Form::text('engine_type', null, ['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('brand_id', 'Select Brand..') !!}

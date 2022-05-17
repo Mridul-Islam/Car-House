@@ -16,11 +16,11 @@ class Car extends Model
         'brand_id',
         'color',
         'noOfSeats',
-        'warrenty',
+        'fuel_tank_capacity',
         'image_id',
         'mileage',
         'fuel_type',
-        'tank_size',
+        'engine_type',
         'condition',
         'gear_type',
         'description'

@@ -19,6 +19,8 @@ Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/car/{id}', [HomeController::class, 'car_detail'])->name('carDetail');
+
 
 Route::group(['middleware'=> 'auth'], function (){
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.home');

@@ -24,7 +24,7 @@
             @foreach($brands as $brand)
             <tr class="tr-shadow">
                 <td> {{ $brand->id }} </td>
-                <td><img src="{{ "../images/" . $brand->image->name }}" alt="Car_brand" width="120px"></td>
+                <td><img src="{{ $brand->image_id ? asset('images/' . $brand->image->name) : "No Image" }}" alt="Car_brand" width="120px"></td>
                 <td> {{ $brand->brand_name }} </td>
                 <td> {{ $brand->company_name }} </td>
                 <td> {{ $brand->country_name }} </td>
