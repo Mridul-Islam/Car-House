@@ -6,12 +6,19 @@
     <header class="bg-dark">
         <div class="container px-4 py-3 px-lg-5 mt-4">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Car House</h1>
+                <h1 class="display-4 fw-bolder" style="color: #aaaaaa">Car House</h1>
                 <p class="lead fw-normal text-white-50 mb-0">With Your Dream Car</p>
             </div>
         </div>
     </header>
 
+    <!-- Session values -->
+    @if(Session::has('cart_added'))
+        <h4 class="text-center text-info">{{ session('cart_added') }}</h4>
+    @endif
+    @if(Session::has('add_order'))
+        <h4 class="text-center text-info">{{ session('add_order') }}</h4>
+    @endif
 
     <div class="container-fluid py-4">
         <div class="card">
@@ -34,8 +41,16 @@
                             <li><b>Fuel type:</b>   {{ $car->fuel_type }}</li>
                             <li><b>Gear Type:</b>   {{ $car->gear_type }}</li>
                         </ul>
-                        <button class="btn btn-outline-primary">Add to Cart</button>
-                        <button class="btn btn-outline-primary">Buy Now</button>
+                        <div style="float: left;">
+                            {!! Form::open(['method'=>'post', 'route'=>['add_cart', $car->id]]) !!}
+                                {!! Form::submit('Add to cart', ['class'=>'btn btn-outline-primary']) !!}
+                            {!! Form::close() !!}
+                        </div>
+                        <div>
+                            {!! Form::open(['method'=>'post', 'route'=>['add_order', $car->id]]) !!}
+                                {!! Form::submit('Buy Now', ['class'=>'btn btn-outline-primary']) !!}
+                            {!! Form::close() !!}
+                        </div>
                     </div>
                 </div>
             </div>

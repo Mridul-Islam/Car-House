@@ -21,6 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 
     <!-- Styles -->
+    <link href="{{ asset('css/admin_styles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -46,16 +47,20 @@
                                 <li><hr class="dropdown-divider" /></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.home') }}" class="nav-link">Admin</a>
-                        </li>
-                        <form class="d-flex">
-                            <button class="btn btn-outline-dark" type="submit">
-                                <i class="bi-cart-fill me-1"></i>
-                                Cart
-                                <span class="badge bg-white text-dark ms-1 rounded-pill">0</span>
-                            </button>
-                        </form>
+                        @if(Auth::user())
+                            <li class="nav-item">
+                                <a href="{{ route('admin.home') }}" class="nav-link">Admin</a>
+                            </li>
+{{--                            <form class="d-flex">--}}
+                            <a href="{{ route('cart_list', Auth::user()->id) }}">
+                                <button class="btn btn-outline-dark" type="submit">
+                                    <i class="bi-cart-fill me-1"></i>
+                                    Cart
+                                    <span class="badge bg-white text-dark ms-1 rounded-pill">0</span>
+                                </button>
+                            </a>
+{{--                            </form>--}}
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

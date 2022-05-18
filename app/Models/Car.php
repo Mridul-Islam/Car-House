@@ -38,6 +38,10 @@ class Car extends Model
         return $this->belongsTo(Brand::class);
     }
 
+    public function carts(){
+        return $this->hasMany(Cart::class);
+    }
+
 
 
 }// End of class
