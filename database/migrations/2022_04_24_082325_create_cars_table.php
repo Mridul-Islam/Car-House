@@ -16,14 +16,14 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('model_name')->unique();
+            $table->string('model_name');
             $table->text('price');
             $table->integer('brand_id');
             $table->string('color');
             $table->integer('noOfSeats');
             $table->text('engine_type');
             $table->string('fuel_tank_capacity');
-            $table->text('image_id');
+            $table->text('image_id')->nullable();
             $table->integer('mileage');
             $table->string('fuel_type');
             $table->string('condition');

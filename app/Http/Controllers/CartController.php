@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Car;
 use App\Models\Cart;
 use App\Models\User;
@@ -25,9 +26,10 @@ class CartController extends Controller
 
     public function cart_list($id){
         $user = User::findOrFail($id);
+        $brands = Brand::all();
         $carts = Cart::whereUserId($user->id)->get();
         //dd($carts);
-        return view('cart_list', compact('carts'));
+        return view('cart_list', compact('carts', 'brands'));
     }
 
     public function cart_delete($id){

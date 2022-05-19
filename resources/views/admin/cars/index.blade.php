@@ -5,6 +5,14 @@
     <h2 class="text-center bg-info">All Cars</h2>
     <hr>
 
+    <!-- Session values -->
+    @if(Session::has('car_created'))
+        <h4 class="text-center bg-success mb-5">{{ session('car_created') }}</h4>
+    @endif
+    @if(Session::has('car_updated'))
+        <h4 class="text-center bg-success mb-5">{{ session('car_updated') }}</h4>
+    @endif
+
     <div class="table-responsive table-responsive-data2">
         <table class="table table-data2">
             <thead>
@@ -22,7 +30,7 @@
             @foreach($cars as $car)
             <tr>
                 <td> {{ $car->id }} </td>
-                <td><img src="{{ $car->image_id ? asset("images/" . $car->image->name) : "No Image"  }}" alt="" width="150px"></td>
+                <td><img src="{{ $car->image_id ? asset("images/" . $car->image->name) : ""  }}" alt="Car_Image" width="150px"></td>
                 <td> {{ $car->model_name }} </td>
                 <td> {{ $car->price }} </td>
                 <td> {{ $car->brand->brand_name }} </td>

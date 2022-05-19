@@ -5,6 +5,14 @@
     <h2 class="text-center bg-info">All Users</h2>
     <hr>
 
+    <!-- Session values -->
+    @if(Session::has('user_created'))
+        <h4 class="text-center bg-success mb-5">{{ session('user_created') }}</h4>
+    @endif
+    @if(Session::has('user_updated'))
+        <h4 class="text-center bg-success mb-5">{{ session('user_updated') }}</h4>
+    @endif
+
     <div class="table-responsive table-responsive-data2">
         <table class="table table-data2">
             <thead>

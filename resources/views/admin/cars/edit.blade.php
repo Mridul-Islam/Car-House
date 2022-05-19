@@ -49,7 +49,7 @@
             </div>
             <div class="form-group">
                 {!! Form::label('fuel_type', 'Select Fuel Type:') !!}
-                {!! Form::select('fuel_type', [''=>'Choose Option..', 'petrol'=>'petrol', 'diesel'=>'diesel', 'CNG'=>'CNG', 'LPG'=>'LPG'], null, ['class'=>'form-control']) !!}
+                {!! Form::select('fuel_type', [''=>'Choose Option..', 'petrol'=>'petrol', 'diesel'=>'diesel', 'CNG'=>'CNG', 'LPG'=>'LPG', 'octane'=>'Octane'], null, ['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('condition', 'Select Vehicle Condition:') !!}

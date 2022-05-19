@@ -9,6 +9,7 @@ use App\Models\Car;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use function Symfony\Component\Translation\t;
 
 class AdminCarsController extends Controller
@@ -39,6 +40,7 @@ class AdminCarsController extends Controller
             $input['image_id'] = $image->id;
         }
         Car::create($input);
+        Session::flash('car_created', 'The Car has been added successfully');
         return redirect('/admin/cars');
     }
 
@@ -64,7 +66,7 @@ class AdminCarsController extends Controller
         if($file = $request->file('image_id')){
             // delete old image
             if($car->image_id){
-                unlink(public_path() . "/images/" . $car->image->name );
+                //unlink(public_path() . "/images/" . $car->image->name );
                 $car->image->delete();
             }
             // save new image
@@ -74,6 +76,7 @@ class AdminCarsController extends Controller
             $input['image_id'] = $image->id;
         }
         $car->update($input);
+        Session::flash('car_updated', 'The Car has been updated successfully');
         return redirect('/admin/cars');
     }
 
@@ -82,9 +85,10 @@ class AdminCarsController extends Controller
     {
         $car = Car::findOrFail($id);
         if($car->image_id){
-            unlink(public_path() . "/images/" . $car->image->name );
+            //unlink(public_path() . "/images/" . $car->image->name );
             $car->image->delete();
         }
+        $car->carts()->delete();
         $car->delete();
         return redirect('/admin/cars');
     }

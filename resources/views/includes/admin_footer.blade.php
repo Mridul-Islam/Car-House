@@ -2,6 +2,8 @@
 </div>
 <!-- ../Page Wrapper -->
 
+@yield('footer')
+
 <!-- Scripts -->
 <script src="{{ asset('js/admin_script.js') }}" defer></script>
 

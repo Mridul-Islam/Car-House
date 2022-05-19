@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/car/{car}', [HomeController::class, 'car_detail'])->name('carDetail');
+Route::get('/brand/{brand}/cars', [HomeController::class, 'brand_cars'])->name('brand.cars');
 
 
 Route::group(['middleware'=> 'auth'], function (){

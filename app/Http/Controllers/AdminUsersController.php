@@ -8,14 +8,14 @@ use App\Models\Image;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminUsersController extends Controller
 {
 
     public function index()
     {
-        $users = User::all();
-
+        $users = User::orderBy('id', 'desc')->get();
         return view('admin.users.index', compact('users'));
     }
 
@@ -41,6 +41,7 @@ class AdminUsersController extends Controller
         $input['role_id'] = $request->role_id;
         $input['password'] = bcrypt($request->password);
         User::create($input);
+        Session::flash('user_created', 'The user has been created successfully');
         return redirect('/admin/users');
     }
 
@@ -64,7 +65,6 @@ class AdminUsersController extends Controller
     {
         $user = User::findOrFail($id);
         $input = $request->all();
-
         // image checking for user
         if($file = $request->file('image_id')){
             // delete previous image
@@ -85,9 +85,8 @@ class AdminUsersController extends Controller
         else{
             $input['password'] = bcrypt($request->password);
         }
-
         $user->update($input);
-
+        Session::flash('user_updated', 'The user has been updated successfully');
         return redirect('/admin/users');
 
     }

@@ -15,6 +15,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/admin_styles.css') }}" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body class="animsition">

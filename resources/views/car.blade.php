@@ -24,7 +24,7 @@
         <div class="card">
             <div class="row no-gutters">
                 <div class="col-md-6">
-                    <img src="{{ asset("images/" . $car->image->name) }}" class="card-img" alt="">
+                    <img src="{{ $car->image_id ? asset("images/" . $car->image->name): '' }}" class="card-img" alt="Car_Image">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">

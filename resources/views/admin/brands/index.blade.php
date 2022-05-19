@@ -6,6 +6,14 @@
     <h2 class="text-center bg-info"> All Brands </h2>
     <hr>
 
+    <!-- Session values -->
+    @if(Session::has('brand_created'))
+        <h4 class="text-center bg-success mb-5">{{ session('brand_created') }}</h4>
+    @endif
+    @if(Session::has('brand_updated'))
+        <h4 class="text-center bg-success mb-5">{{ session('brand_updated') }}</h4>
+    @endif
+
     <div class="table-responsive table-responsive-data2">
         <table class="table table-data2">
             <thead>
@@ -24,7 +32,7 @@
             @foreach($brands as $brand)
             <tr class="tr-shadow">
                 <td> {{ $brand->id }} </td>
-                <td><img src="{{ $brand->image_id ? asset('images/' . $brand->image->name) : "No Image" }}" alt="Car_brand" width="120px"></td>
+                <td><img src="{{ $brand->image_id ? asset('images/' . $brand->image->name) : "" }}" alt="Brand_image" width="120px"></td>
                 <td> {{ $brand->brand_name }} </td>
                 <td> {{ $brand->company_name }} </td>
                 <td> {{ $brand->country_name }} </td>

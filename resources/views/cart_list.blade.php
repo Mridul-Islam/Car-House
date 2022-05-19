@@ -26,13 +26,13 @@
                 @foreach($carts as $cart)
                     <tr class="tr-shadow">
                         <td>{{ $cart->id }}</td>
-                        <td><img src="{{ asset('images/' . $cart->car->image->name) }}" width="180px"/></td>
+                        <td><img src="{{ $cart->car->image_id ? asset('images/' . $cart->car->image->name) : '' }}" alt="Car_Image" width="180px"/></td>
                         <td>{{ $cart->car->model_name }}</td>
                         <td>{{ $cart->car->price }}</td>
                         <td>{{ $cart->created_at->diffForHumans() }}</td>
                         <td>
                             {!! Form::open(['method'=>'delete', 'route'=>['cart_delete', $cart->id]]) !!}
-                                {!! Form::submit('Delete', ['class'=>'btn btn-danger']) !!}
+                            {!! Form::submit('Delete', ['class'=>'btn btn-danger']) !!}
                             {!! Form::close() !!}
                         </td>
                     </tr>

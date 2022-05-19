@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateBrandRequest;
 use App\Models\Brand;
 use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminBrandsController extends Controller
 {
@@ -34,6 +35,7 @@ class AdminBrandsController extends Controller
             $input['image_id'] = $image->id;
         }
         Brand::create($input);
+        Session::flash('brand_created', 'The brand has been created successfully');
         return redirect('/admin/brands');
     }
 
@@ -68,6 +70,7 @@ class AdminBrandsController extends Controller
             $input['image_id'] = $image->id;
         }
         $brand->update($input);
+        Session::flash('brand_updated', 'The brand has been updated successfully');
         return redirect('/admin/brands');
     }
 
