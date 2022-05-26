@@ -29,11 +29,10 @@ class HomeController extends Controller
 
     // show brand wise car list
     public function brand_cars($id){
-        $brand = Brand::where('id', $id)->get();
-        $cars = $brand->cars;
-        dd($cars);
-        //$brands = Brand::all();
-        //return view('brandCarsList', compact('cars'));
+        $brands = Brand::all();
+        $cars = Car::where('brand_id', $id)->get();
+        //dd($cars);
+        return view('brandCarsList', compact('cars', 'brands'));
     }
 
 

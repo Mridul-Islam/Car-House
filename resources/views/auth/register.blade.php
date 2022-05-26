@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.login_registration')
 
 @section('content')
 <div class="container" style="margin-top: 100px; margin-bottom: 180px;">
